@@ -58,6 +58,8 @@ public class PigLatin {
   if(min >= 0 && min < 4){
     return min;
   }
+  
+  
       return -1;
         //precondition: sWord is a valid String of length greater than 0.
         //postcondition: returns the position of the first vowel in sWord.  If there are no vowels, returns -1
@@ -70,7 +72,9 @@ public class PigLatin {
         //postcondition: returns the pig latin equivalent of sWord
         // more code should go here
         //System.out.println(findFirstVowel(sWord));
-      if(findFirstVowel(sWord) == -1) {
+        if(sWord.length()>=2 && sWord.substring(0, 2).equals("qu")){
+        return sWord.substring(2, sWord.length()) + "quay";
+        } else if(findFirstVowel(sWord) == -1) {
         return sWord + "ay";
       } else if (findFirstVowel(sWord) == 0){
           return sWord + "way";
