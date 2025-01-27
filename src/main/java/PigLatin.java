@@ -69,7 +69,7 @@ public class PigLatin {
         //precondition: sWord is a valid String of length greater than 0
         //postcondition: returns the pig latin equivalent of sWord
         // more code should go here
-        System.out.println(findFirstVowel(sWord));
+        //System.out.println(findFirstVowel(sWord));
       if(findFirstVowel(sWord) == -1) {
         return sWord + "ay";
       } else if (findFirstVowel(sWord) == 0){
