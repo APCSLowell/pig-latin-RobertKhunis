@@ -28,10 +28,31 @@ public class PigLatin {
 	    }
     }
     public int findFirstVowel(String sWord) {
+	int a = sWord.indexOf("a"); 
+	int e = sWord.indexOf("e"); 
+	int i = sWord.indexOf("i"); 
+	int o = sWord.indexOf("o"); 
+	int u = sWord.indexOf("u"); 
+	ArrayList <Integer> theList = new ArrayList <Integer>();
+	ArrayList.add(a);
+	ArrayList.add(e);
+	ArrayList.add(i);
+	ArrayList.add(o);
+	ArrayList.add(u);
+	int min = theList.get(0);
+  for(int i = 0; i<theList.size(); i++){
+    if(theList.get(i) > -1 && theList.get(i) < min){
+      min = theList.get(i);
+    }
+  }
+	if(min >= 0){
+		return min;
+	}
+	    return -1;
         //precondition: sWord is a valid String of length greater than 0.
         //postcondition: returns the position of the first vowel in sWord.  If there are no vowels, returns -1
 	    // your code goes here
-        return -1;
+        
     }
 
     public String pigLatin(String sWord) {
@@ -40,8 +61,15 @@ public class PigLatin {
         // more code should go here
 	    if(findFirstVowel(sWord) == -1) {
 		    return sWord + "ay";
-	    }
-	    else {
+	    } else if (findFirstVowel(sWord) == 0){
+	        return sWord + "way";
+	    } else if (findFirstVowel(sWord) == 1){
+		return sWord.substring(1, sWord.length()) + sWord.substring(0, 1) + "ay";
+	    } else if (findFirstVowel(sWord) == 2){
+		return sWord.substring(2, sWord.length()) + sWord.substring(0, 2) + "ay";
+	    } else if (findFirstVowel(sWord) == 3){
+		return sWord.substring(3, sWord.length()) + sWord.substring(0, 3) + "ay";
+	    } else {	    
 		return "ERROR!";
 	    }
     }
